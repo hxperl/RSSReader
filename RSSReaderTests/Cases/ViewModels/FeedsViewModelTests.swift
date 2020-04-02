@@ -12,5 +12,4 @@ import XCTest
 class FeedsViewModelTests: XCTestCase {
 
 	var sut: FeedsViewModel!
-	
 }

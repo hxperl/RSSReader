@@ -71,7 +71,9 @@ struct FeedParser {
 	/// - Parameter contents: 파싱 대상 xml 문자열
 	/// - Returns: AnyPublsher<[Feed], Never>
 	func feeds(contents: String) -> AnyPublisher<[Feed], Never> {
-		guard let doc = try? SwiftSoup.parse(contents, "", Parser.xmlParser()), let items = try? doc.getElementsByTag("item") else { return Empty().eraseToAnyPublisher() }
+		guard let doc = try? SwiftSoup.parse(contents, "", Parser.xmlParser()),
+			let items = try? doc.getElementsByTag("item"),
+			!items.isEmpty() else { return Empty().eraseToAnyPublisher() }
 		return Just(items)
 			.flatMap { items in
 				// fetch the feed details, flatten all the feed publisher

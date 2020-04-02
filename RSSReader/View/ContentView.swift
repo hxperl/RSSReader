@@ -26,7 +26,7 @@ struct ContentView: View {
 			}
 		}
 		.pullToRefresh(isShowing: $isShowing) {
-			DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
 				self.viewModel.parse()
 				self.isShowing = false
 			}

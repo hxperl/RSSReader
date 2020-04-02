@@ -29,7 +29,13 @@ class FeedsViewModel: ObservableObject {
 	/// 타켓 URL로부터 파싱해서
 	/// allFeeds 변수에 저장
 	func parse() {
-		let contents = try! String(contentsOf: self.url)
+		let contents: String
+		do {
+			contents = try String(contentsOf: self.url)
+		} catch {
+			contents = ""
+		}
+
 		self.allFeeds = []
 		parser
 			.feeds(contents: contents)
