@@ -86,7 +86,7 @@ struct FeedParser {
 	}
 	
 	
-	private func keywordParser(contents: String) -> [String] {
+	func keywordParser(contents: String) -> [String] {
 		let components = contents.components(separatedBy: .whitespacesAndNewlines)
 		let words = components.filter { !$0.isEmpty }
 		var wordDictionary = Dictionary<String, Int>()

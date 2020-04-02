@@ -35,13 +35,6 @@ struct FeedView: View {
     }
 }
 
-struct FeedView_Previews: PreviewProvider {
-    static var previews: some View {
-		FeedView(feed: Feed.generator())
-			.frame(height: 120)
-    }
-}
-
 // MARK: - 키워드 뷰
 struct KeywordBadge: View {
 	var string: String

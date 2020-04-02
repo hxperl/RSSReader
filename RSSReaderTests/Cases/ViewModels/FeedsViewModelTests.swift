@@ -12,4 +12,14 @@ import XCTest
 class FeedsViewModelTests: XCTestCase {
 
 	var sut: FeedsViewModel!
+	
+	override func setUp() {
+		super.setUp()
+		sut = FeedsViewModel(url: URL(string: "https://news.google.com/rss")!)
+	}
+	
+	override  func tearDown() {
+		sut = nil
+		super.tearDown()
+	}
 }

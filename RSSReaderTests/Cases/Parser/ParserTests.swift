@@ -26,6 +26,8 @@ class ParserTests: XCTestCase {
 		super.tearDown()
     }
 	
+	// MARK: - Feeds
+	
 	func test_feeds_givenEmptyContent_emptyFeeds() {
 		// given
 		var result: [Feed] = []
@@ -40,5 +42,18 @@ class ParserTests: XCTestCase {
 		// then
 		XCTAssertTrue(result.isEmpty)
 	}
-
+	
+	// MARK: - Keywords
+	
+	func test_keywordsOrder_Ascending() {
+		// given
+		let test = "Banana Banana Banana Coin Coin Coin Apple Apple Apple"
+		let expected = ["Apple", "Banana", "Coin"]
+		
+		// when
+		let result = sut.keywordParser(contents: test)
+		
+		// then
+		XCTAssertEqual(result, expected)
+	}
 }
