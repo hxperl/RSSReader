@@ -34,13 +34,7 @@ class FeedsViewModel: ObservableObject {
 		parser
 			.feeds(contents: contents)
 			.receive(on: DispatchQueue.main)
-			.sink(receiveCompletion: { completion in
-				if case .failure(let error) = completion {
-					print("error", error)
-				}
-			}, receiveValue: { feeds in
-				self.allFeeds = feeds
-			})
+			.assign(to: \.allFeeds, on: self)
 			.store(in: &subscriptions)
 	}
 }
