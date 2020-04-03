@@ -24,6 +24,7 @@
 		597A34BE242873D0009D7640 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A34BD242873D0009D7640 /* Parser.swift */; };
 		597A34C02428AB00009D7640 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A34BF2428AB00009D7640 /* WebView.swift */; };
 		59D36754242A18A50087C913 /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 59D36753242A18A50087C913 /* SwiftUIRefresh */; };
+		59DD070E2436AF2B004FEA74 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DD070D2436AF2B004FEA74 /* SplashScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		597A34BA24286F61009D7640 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		597A34BD242873D0009D7640 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		597A34BF2428AB00009D7640 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		59DD070D2436AF2B004FEA74 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				597A34B4242868AE009D7640 /* FeedView.swift */,
 				597A34BF2428AB00009D7640 /* WebView.swift */,
 				597A34BA24286F61009D7640 /* ViewModifiers.swift */,
+				59DD070D2436AF2B004FEA74 /* SplashScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59DD070E2436AF2B004FEA74 /* SplashScreen.swift in Sources */,
 				59463B74241FA09900431B8E /* AppDelegate.swift in Sources */,
 				597A34BB24286F61009D7640 /* ViewModifiers.swift in Sources */,
 				59463B8E241FA88900431B8E /* Feed.swift in Sources */,

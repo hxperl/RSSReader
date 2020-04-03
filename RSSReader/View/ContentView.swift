@@ -12,7 +12,8 @@ import SwiftUIRefresh
 struct ContentView: View {
 	
 	@ObservedObject var viewModel: FeedsViewModel
-	@State private var isShowing = false
+	@State private var showLoading = false
+	@State private var showSplash = true
 	
 	init() {
 		let url = URL(string: "https://news.google.com/rss")!
@@ -20,15 +21,27 @@ struct ContentView: View {
 	}
 	
     var body: some View {
-		List(viewModel.allFeeds) { feed in
-			NavigationLink(destination: WebView(url: feed.link)) {
-				FeedView(feed: feed)
+		ZStack {
+			List(viewModel.allFeeds) { feed in
+				NavigationLink(destination: WebView(url: feed.link)) {
+					FeedView(feed: feed)
+				}
 			}
-		}
-		.pullToRefresh(isShowing: $isShowing) {
-			DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-				self.viewModel.parse()
-				self.isShowing = false
+			.pullToRefresh(isShowing: $showLoading) {
+				DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+					self.viewModel.parse()
+					self.showLoading = false
+				}
+			}
+			
+			SplashScreen()
+			  .opacity(showSplash ? 1 : 0)
+			  .onAppear {
+				DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+				  withAnimation() {
+					self.showSplash = false
+				  }
+				}
 			}
 		}
     }

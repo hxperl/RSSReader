@@ -27,3 +27,13 @@ struct FeedBodyStyle: ViewModifier {
 			.foregroundColor(.black)
 	}
 }
+
+struct SplashTitleStyle: ViewModifier {
+	
+	let font = Font.system(.title).weight(.bold)
+	
+	func body(content: Content) -> some View {
+		return content
+			.font(font)
+	}
+}
